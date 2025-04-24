@@ -17,6 +17,8 @@ a personal quiz app for studying before exams!
 
 - [ ] add option to generate quizzes by adding pdfs
 - [ ] add backend for persisting user attempts, and quizzes
+- [ ] add timer option for attempting quizzes
+- [ ] add option to shuffle questions in a quiz, and options in a question
 
 
 _made with :heart: by @aahnik_
