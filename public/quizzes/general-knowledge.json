@@ -1,0 +1,43 @@
+{
+  "id": "general-knowledge",
+  "title": "General Knowledge Quiz",
+  "description": "Test your knowledge on a variety of topics",
+  "icon": "globe",
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "answers": ["London", "Berlin", "Paris", "Madrid"],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "answers": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correct_key": [1]
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "answers": [
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Leonardo da Vinci",
+        "Michelangelo"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which of these are mammals?",
+      "answers": ["Dolphin", "Shark", "Whale", "Penguin"],
+      "correct_key": [0, 2]
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "answers": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean",
+        "Pacific Ocean"
+      ],
+      "correct_key": [3]
+    }
+  ]
+}

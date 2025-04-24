@@ -1,0 +1,53 @@
+{
+  "id": "history",
+  "title": "History Quiz",
+  "description": "Test your knowledge of historical events and figures",
+  "icon": "history",
+  "questions": [
+    {
+      "question": "In which year did World War II end?",
+      "answers": ["1943", "1945", "1947", "1950"],
+      "correct_key": [1]
+    },
+    {
+      "question": "Who was the first President of the United States?",
+      "answers": [
+        "Thomas Jefferson",
+        "John Adams",
+        "George Washington",
+        "Benjamin Franklin"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which of these ancient civilizations existed first?",
+      "answers": [
+        "Roman Empire",
+        "Ancient Egypt",
+        "Ancient Greece",
+        "Aztec Empire"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which of these events occurred during the Renaissance?",
+      "answers": [
+        "Invention of the printing press",
+        "Discovery of America",
+        "Creation of perspective in art",
+        "Development of humanism"
+      ],
+      "correct_key": [0, 1, 2, 3]
+    },
+    {
+      "question": "Who wrote 'The Communist Manifesto'?",
+      "answers": [
+        "Vladimir Lenin",
+        "Joseph Stalin",
+        "Karl Marx and Friedrich Engels",
+        "Leon Trotsky"
+      ],
+      "correct_key": [2]
+    }
+  ]
+}

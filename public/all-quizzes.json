@@ -1,0 +1,17 @@
+{
+  "quizzes": [
+    {
+      "id": "general-knowledge",
+      "title": "General Knowledge",
+      "description": "Test your knowledge on a variety of topics",
+      "icon": "globe"
+    },
+
+    {
+      "id": "history",
+      "title": "History Quiz",
+      "description": "Test your knowledge of historical events and figures",
+      "icon": "history"
+    }
+  ]
+}
