@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -102,7 +103,9 @@ export default function QuizPlayer({ jsonPath, onComplete }: QuizPlayerProps) {
     !quizComplete && questions.length > 0
       ? questions[currentQuestionIndex]
       : null;
-  const isMultipleChoice = currentQuestion ? currentQuestion.correct_key.length > 1 : false;
+  const isMultipleChoice = currentQuestion
+    ? currentQuestion.correct_key.length > 1
+    : false;
   const progress =
     questions.length > 0 ? (currentQuestionIndex / questions.length) * 100 : 0;
 
@@ -179,6 +182,48 @@ export default function QuizPlayer({ jsonPath, onComplete }: QuizPlayerProps) {
     return currentQuestion?.correct_key.includes(index) || false;
   };
 
+  // Handle keyboard shortcuts
+  const handleKeyPress = useCallback(
+    (e: KeyboardEvent) => {
+      if (quizComplete) return;
+
+      const key = e.key.toLowerCase();
+
+      // Handle option selection (a-d)
+      if (!hasSubmitted && currentQuestion) {
+        const optionIndex = key.charCodeAt(0) - "a".charCodeAt(0);
+        if (optionIndex >= 0 && optionIndex < currentQuestion.answers.length) {
+          if (isMultipleChoice) {
+            handleMultiAnswerSelect(optionIndex);
+          } else {
+            handleSingleAnswerSelect(optionIndex);
+          }
+          return;
+        }
+      }
+
+      // Handle enter for submit/next
+      if (key === "enter") {
+        if (!hasSubmitted && selectedAnswers.length > 0) {
+          handleSubmit();
+        } else if (hasSubmitted) {
+          handleNext();
+        }
+        return;
+      }
+
+      // Handle escape to clear selection
+      if (key === "escape" && !hasSubmitted) {
+        setSelectedAnswers([]);
+      }
+    },
+    [currentQuestion, hasSubmitted, selectedAnswers.length, isMultipleChoice],
+  );
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [handleKeyPress]);
   if (loading) {
     return (
       <Card className="w-full">
@@ -334,47 +379,59 @@ export default function QuizPlayer({ jsonPath, onComplete }: QuizPlayerProps) {
           </h2>
 
           {isMultipleChoice ? (
-            <div className="space-y-3">
+            <div className="space-y-2">
               {currentQuestion?.answers.map((answer, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center space-x-3 p-3 rounded-lg border ${
-                    hasSubmitted && isAnswerCorrect(index)
-                      ? "bg-green-50 border-green-200"
-                      : hasSubmitted &&
-                          selectedAnswers.includes(index) &&
-                          !isAnswerCorrect(index)
-                        ? "bg-red-50 border-red-200"
-                        : "border-gray-200 hover:bg-gray-50"
-                  }`}
-                >
-                  <Checkbox
-                    id={`answer-${index}`}
-                    checked={selectedAnswers.includes(index)}
-                    onCheckedChange={() =>
+                <div key={index}>
+                  <button
+                    type="button"
+                    className={cn(
+                      "w-full flex items-center px-4 py-2 rounded-lg transition-colors",
+                      "border-2 hover:border-blue-400",
+                      selectedAnswers.includes(index) &&
+                        !hasSubmitted &&
+                        "border-blue-500 bg-blue-50",
+                      hasSubmitted &&
+                        isAnswerCorrect(index) &&
+                        "border-green-500 bg-green-50",
+                      hasSubmitted &&
+                        selectedAnswers.includes(index) &&
+                        !isAnswerCorrect(index) &&
+                        "border-red-500 bg-red-50",
+                      "disabled:opacity-100",
+                    )}
+                    disabled={hasSubmitted}
+                    onClick={() =>
                       !hasSubmitted && handleMultiAnswerSelect(index)
                     }
-                    disabled={hasSubmitted}
-                    className={
-                      hasSubmitted && isAnswerCorrect(index)
-                        ? "text-green-500"
-                        : ""
-                    }
-                  />
-                  <Label
-                    htmlFor={`answer-${index}`}
-                    className="flex-grow cursor-pointer"
                   >
-                    {answer}
-                  </Label>
-                  {hasSubmitted && isAnswerCorrect(index) && (
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                  )}
-                  {hasSubmitted &&
-                    selectedAnswers.includes(index) &&
-                    !isAnswerCorrect(index) && (
-                      <XCircle className="h-5 w-5 text-red-500" />
+                    <div
+                      className={cn(
+                        "flex items-center justify-center rounded-md w-8 h-8 mr-3 font-semibold",
+                        "border-2",
+                        selectedAnswers.includes(index) &&
+                          !hasSubmitted &&
+                          "border-blue-500 bg-blue-100",
+                        hasSubmitted &&
+                          isAnswerCorrect(index) &&
+                          "border-green-500 bg-green-100",
+                        hasSubmitted &&
+                          selectedAnswers.includes(index) &&
+                          !isAnswerCorrect(index) &&
+                          "border-red-500 bg-red-100",
+                      )}
+                    >
+                      {String.fromCharCode(65 + index)}
+                    </div>
+                    <span className="flex-grow text-left">{answer}</span>
+                    {hasSubmitted && isAnswerCorrect(index) && (
+                      <CheckCircle className="h-5 w-5 text-green-500 ml-2" />
                     )}
+                    {hasSubmitted &&
+                      selectedAnswers.includes(index) &&
+                      !isAnswerCorrect(index) && (
+                        <XCircle className="h-5 w-5 text-red-500 ml-2" />
+                      )}
+                  </button>
                 </div>
               ))}
             </div>
@@ -385,41 +442,61 @@ export default function QuizPlayer({ jsonPath, onComplete }: QuizPlayerProps) {
                 !hasSubmitted &&
                 handleSingleAnswerSelect(Number.parseInt(value))
               }
-              className="space-y-3"
+              className="space-y-1"
               disabled={hasSubmitted}
             >
               {currentQuestion?.answers.map((answer, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center space-x-3 p-3 rounded-lg border ${
-                    hasSubmitted && isAnswerCorrect(index)
-                      ? "bg-green-50 border-green-200"
-                      : hasSubmitted &&
-                          selectedAnswers.includes(index) &&
-                          !isAnswerCorrect(index)
-                        ? "bg-red-50 border-red-200"
-                        : "border-gray-200 hover:bg-gray-50"
-                  }`}
-                >
-                  <RadioGroupItem
-                    value={index.toString()}
-                    id={`answer-${index}`}
-                    disabled={hasSubmitted}
-                  />
-                  <Label
-                    htmlFor={`answer-${index}`}
-                    className="flex-grow cursor-pointer"
-                  >
-                    {answer}
-                  </Label>
-                  {hasSubmitted && isAnswerCorrect(index) && (
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                  )}
-                  {hasSubmitted &&
-                    selectedAnswers.includes(index) &&
-                    !isAnswerCorrect(index) && (
-                      <XCircle className="h-5 w-5 text-red-500" />
+                <div key={index}>
+                  <button
+                    type="button"
+                    className={cn(
+                      "w-full flex items-center px-4 py-2 rounded-lg transition-colors",
+                      "border-2 hover:border-blue-400",
+                      selectedAnswers.includes(index) &&
+                        !hasSubmitted &&
+                        "border-blue-500 bg-blue-50",
+                      hasSubmitted &&
+                        isAnswerCorrect(index) &&
+                        "border-green-500 bg-green-50",
+                      hasSubmitted &&
+                        selectedAnswers.includes(index) &&
+                        !isAnswerCorrect(index) &&
+                        "border-red-500 bg-red-50",
+                      "disabled:opacity-100",
                     )}
+                    disabled={hasSubmitted}
+                    onClick={() =>
+                      !hasSubmitted && handleSingleAnswerSelect(index)
+                    }
+                  >
+                    <div
+                      className={cn(
+                        "flex items-center justify-center rounded-md w-8 h-8 mr-3 font-semibold",
+                        "border-2",
+                        selectedAnswers.includes(index) &&
+                          !hasSubmitted &&
+                          "border-blue-500 bg-blue-100",
+                        hasSubmitted &&
+                          isAnswerCorrect(index) &&
+                          "border-green-500 bg-green-100",
+                        hasSubmitted &&
+                          selectedAnswers.includes(index) &&
+                          !isAnswerCorrect(index) &&
+                          "border-red-500 bg-red-100",
+                      )}
+                    >
+                      {String.fromCharCode(65 + index)}
+                    </div>
+                    <span className="flex-grow text-left">{answer}</span>
+                    {hasSubmitted && isAnswerCorrect(index) && (
+                      <CheckCircle className="h-5 w-5 text-green-500 ml-2" />
+                    )}
+                    {hasSubmitted &&
+                      selectedAnswers.includes(index) &&
+                      !isAnswerCorrect(index) && (
+                        <XCircle className="h-5 w-5 text-red-500 ml-2" />
+                      )}
+                  </button>
                 </div>
               ))}
             </RadioGroup>
