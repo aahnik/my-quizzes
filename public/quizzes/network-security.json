@@ -1,7 +1,7 @@
 {
   "id": "network-security",
   "title": "Network Security Quiz",
-  "description": "Comprehensive test covering network security fundamentals, firewalls, protocols, and security systems",
+  "description": "Comprehensive test covering network security fundamentals",
   "icon": "shield",
   "questions": [
     {

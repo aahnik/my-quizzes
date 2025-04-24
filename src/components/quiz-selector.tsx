@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 import {
   BookOpen,
   Brain,
@@ -31,6 +33,8 @@ interface QuizInfo {
   title: string;
   description: string;
   icon: string;
+  questionCount: number;
+  topics: string[];
 }
 
 interface QuizSelectorProps {
@@ -54,6 +58,16 @@ export default function QuizSelector({ quizzesDirectory }: QuizSelectorProps) {
   const [quizzes, setQuizzes] = useState<QuizInfo[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedQuiz, setSelectedQuiz] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredQuizzes = quizzes.filter((quiz) => {
+    const searchLower = searchQuery.toLowerCase();
+    return (
+      quiz.title.toLowerCase().includes(searchLower) ||
+      quiz.description.toLowerCase().includes(searchLower) ||
+      quiz.topics.some((topic) => topic.toLowerCase().includes(searchLower))
+    );
+  });
 
   // Function to render the icon component based on icon name
   const renderIcon = (iconName: string) => {
@@ -129,15 +143,24 @@ export default function QuizSelector({ quizzesDirectory }: QuizSelectorProps) {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">Select a Quiz</h2>
+      <div className="relative mb-6">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-6 w-4" />
+        <Input
+          type="text"
+          placeholder="Search quizzes by title, description or topics..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="pl-9 h-8"
+        />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {quizzes.map((quiz) => (
+        {filteredQuizzes.map((quiz) => (
           <Card
             key={quiz.id}
             className="cursor-pointer hover:shadow-md transition-shadow"
             onClick={() => handleQuizSelect(quiz.id)}
           >
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-1">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-full bg-gray-100">
                   {renderIcon(quiz.icon)}
@@ -146,14 +169,26 @@ export default function QuizSelector({ quizzesDirectory }: QuizSelectorProps) {
               </div>
               <CardDescription>{quiz.description}</CardDescription>
             </CardHeader>
-            <CardContent className="pb-2">
-              <div className="h-24 flex items-center justify-center text-gray-400 bg-gray-50 rounded-md">
-                <p className="text-sm">Click to start quiz</p>
+            <CardContent className="">
+              <div className="h-20 flex flex-col gap-1.5 p-1 bg-gray-50 rounded-md">
+                <div className="text-md text-gray-600">
+                  {quiz.questionCount} Questions
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {quiz.topics.map((topic) => (
+                    <span
+                      key={topic}
+                      className="px-2 py-0.5 text-sm rounded-full bg-gray-200 text-gray-700"
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
               </div>
             </CardContent>
-            <CardFooter>
+            {/* <CardFooter>
               <Button className="w-full">Start Quiz</Button>
-            </CardFooter>
+            </CardFooter> */}
           </Card>
         ))}
       </div>
