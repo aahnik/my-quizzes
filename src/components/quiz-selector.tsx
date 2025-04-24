@@ -177,7 +177,7 @@ export default function QuizSelector({ quizzesDirectory }: QuizSelectorProps) {
             onOpenChange={setIsModalOpen}
           >
             <ModalTrigger asChild>
-              <Button className="h-10">
+              <Button className="h-10 cursor-pointer">
                 <Plus className="h-5 w-5" />
                 Add New Quiz
               </Button>
@@ -206,7 +206,7 @@ export default function QuizSelector({ quizzesDirectory }: QuizSelectorProps) {
           <Button
             variant="outline"
             size="icon"
-            className="h-12 w-12"
+            className="h-12 w-12 cursor-pointer"
             onClick={shuffleQuizzes}
             title="Shuffle quizzes"
           >
