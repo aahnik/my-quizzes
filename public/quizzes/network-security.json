@@ -1,0 +1,923 @@
+{
+  "id": "network-security",
+  "title": "Network Security Quiz",
+  "description": "Comprehensive test covering network security fundamentals, firewalls, protocols, and security systems",
+  "icon": "shield",
+  "questions": [
+    {
+      "question": "What is network security?",
+      "answers": [
+        "A set of rules and configurations designed to protect computer hardware only",
+        "A set of rules and configurations designed to protect the integrity, confidentiality, and accessibility of computer networks and data",
+        "A software that only prevents DoS attacks",
+        "A hardware component that only filters IP addresses"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which of the following is NOT a key aspect of network security?",
+      "answers": [
+        "Securing data",
+        "Controlling access",
+        "Increasing network speed",
+        "Detecting threats"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Network security typically consists of how many different controls?",
+      "answers": ["Two", "Three", "Four", "Five"],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which security control deals with physical access to network components?",
+      "answers": [
+        "Technical security controls",
+        "Administrative security controls",
+        "Physical security controls",
+        "Logical security controls"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which security control protects data that is stored on the network or in transit?",
+      "answers": [
+        "Technical security controls",
+        "Administrative security controls",
+        "Physical security controls",
+        "Logical security controls"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Administrative security controls include:",
+      "answers": [
+        "Locks and biometric authentication",
+        "Encryption and authentication",
+        "Security policies and processes for user behavior",
+        "Network hardware components"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which of the following is NOT a type of network security?",
+      "answers": [
+        "Network Access Control",
+        "Firewall Protection",
+        "Network Speed Optimization",
+        "Virtual Private Networks"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "The principle that defines who can access what within a network is:",
+      "answers": [
+        "Network Access Control",
+        "Data Loss Prevention",
+        "Antivirus",
+        "Firewall"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What acts as a barrier between untrusted external networks and your trusted internal network?",
+      "answers": [
+        "Antivirus and antimalware",
+        "Firewall",
+        "VPN",
+        "Network segmentation"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "VPN stands for:",
+      "answers": [
+        "Virtual Personal Network",
+        "Virtual Private Network",
+        "Virtual Protocol Network",
+        "Virtual Public Network"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is a firewall?",
+      "answers": [
+        "A device that speeds up network traffic",
+        "A device that monitors for hardware failures",
+        "A barrier that filters network traffic based on rules",
+        "A device that encrypts all network traffic"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the main difference between stateless and stateful firewalls?",
+      "answers": [
+        "Stateful firewalls can track connection states while stateless firewalls cannot",
+        "Stateless firewalls are faster than stateful firewalls",
+        "Stateful firewalls only work on Windows systems",
+        "Stateless firewalls only work on Linux systems"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which of the following is also known as a packet-filtering firewall?",
+      "answers": [
+        "Stateful firewall",
+        "Stateless firewall",
+        "Application firewall",
+        "Next-generation firewall"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In which layer of the OSI model does an application firewall operate?",
+      "answers": [
+        "Transport layer",
+        "Network layer",
+        "Data link layer",
+        "Application layer"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What type of firewall would be best to prevent SQL injection attacks?",
+      "answers": [
+        "Stateless firewall",
+        "Stateful firewall",
+        "Application firewall",
+        "Network-layer firewall"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which of the following is a common feature of packet-filtering firewalls?",
+      "answers": [
+        "They can examine the content of application data",
+        "They filter packets based on IP addresses and port numbers",
+        "They can identify and block specific applications",
+        "They can detect malware within encrypted traffic"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In firewall terminology, what does ACL stand for?",
+      "answers": [
+        "Access Control Layer",
+        "Application Control Logic",
+        "Access Control List",
+        "Application Content Library"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What firewall approach assumes \"never trust, always verify\"?",
+      "answers": [
+        "Traditional firewall approach",
+        "Zero Trust Network Security",
+        "Stateful inspection",
+        "Deep packet inspection"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which is a drawback of traditional network security?",
+      "answers": [
+        "Uses too much bandwidth",
+        "It's less effective for decentralized networks",
+        "It's too expensive",
+        "It requires specialized hardware"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is Network Segmentation primarily used for?",
+      "answers": [
+        "Speeding up network traffic",
+        "Isolating critical areas of the network to limit access",
+        "Creating multiple internet connections",
+        "Reducing network costs"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the guiding principle of Zero Trust Network Security?",
+      "answers": [
+        "\"Trust but verify\"",
+        "\"Never trust, always verify\"",
+        "\"Trust everyone inside the network\"",
+        "\"Verify once, trust always\""
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is one of the key benefits of Zero Trust Network Security?",
+      "answers": [
+        "Faster network speeds",
+        "Less maintenance required",
+        "Granular access control",
+        "Lower costs"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which is NOT a technology used to implement Zero Trust architecture?",
+      "answers": [
+        "Identity and Access Management (IAM)",
+        "Multi-factor Authentication (MFA)",
+        "Network Address Translation (NAT)",
+        "Data Loss Prevention (DLP)"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "How does Zero Trust Network Security differ from traditional network security?",
+      "answers": [
+        "Zero Trust focuses on individual resources rather than perimeter",
+        "Zero Trust only protects cloud resources",
+        "Zero Trust is only for large enterprises",
+        "Zero Trust only requires a single authentication"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What is ZTNA in the context of Zero Trust?",
+      "answers": [
+        "Zero Trust Network Authentication",
+        "Zero Trust Network Access",
+        "Zero Trust Network Assessment",
+        "Zero Trust Network Analyzer"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What are the three Ds of security?",
+      "answers": [
+        "Detect, Disconnect, Delete",
+        "Defence, Deterrence, Detection",
+        "Disable, Defend, Detect",
+        "Distribute, Deploy, Defend"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which security mode is focused on reducing the likelihood of a successful compromise?",
+      "answers": ["Deterrence", "Detection", "Defence", "Disabling"],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which security mode is behind laws against unauthorized network access?",
+      "answers": ["Defence", "Deterrence", "Detection", "Disabling"],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which security mode is often the least commonly implemented on computer networks?",
+      "answers": ["Defence", "Deterrence", "Detection", "Disabling"],
+      "correct_key": [2]
+    },
+    {
+      "question": "Without adequate detection, a security breach may go unnoticed for:",
+      "answers": [
+        "Seconds only",
+        "Minutes only",
+        "Hours, days, or even forever",
+        "Only until the next system check"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is email security?",
+      "answers": [
+        "A method of exchanging digital messages securely",
+        "Practices and technologies to safeguard email accounts and data",
+        "A software to encrypt emails",
+        "A hardware device to filter emails"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which is NOT a common email security threat?",
+      "answers": [
+        "Phishing attacks",
+        "MITM attacks",
+        "Hardware failure",
+        "Spoofing"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is spoofing in the context of email security?",
+      "answers": [
+        "Sending bulk emails",
+        "Crafting emails to appear as if they originated from a trusted source",
+        "Encrypting email content",
+        "Blocking email delivery"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What protocol is used to transfer emails between servers?",
+      "answers": ["HTTP", "FTP", "SMTP", "SFTP"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What does SMTP stand for?",
+      "answers": [
+        "Simple Mail Transfer Protocol",
+        "Secure Mail Transfer Protocol",
+        "Simple Message Transfer Protocol",
+        "Secure Message Transfer Protocol"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which protocol is used to retrieve/download messages from the mail server to the client machine?",
+      "answers": ["SMTP only", "HTTP only", "POP3 or IMAP", "FTP or SFTP"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the main difference between POP3 and IMAP?",
+      "answers": [
+        "POP3 deletes emails from the server after download, while IMAP keeps them on the server",
+        "IMAP is only for sending emails, while POP3 is for receiving",
+        "POP3 is more secure than IMAP",
+        "IMAP is faster than POP3"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "On which port does the SMTP server typically listen?",
+      "answers": ["Port 21", "Port 25", "Port 80", "Port 443"],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is used to confirm domain ownership and prevent spoofing in SMTP Security?",
+      "answers": [
+        "Virtual Private Networks",
+        "Domain Verification (SPF, DKIM)",
+        "Antivirus software",
+        "Network Access Control"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does POP3S use to encrypt the connection between the email client and server?",
+      "answers": ["RSA", "AES", "SSL/TLS", "MD5"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is PGP?",
+      "answers": [
+        "A proprietary email client",
+        "An open source software package for email security",
+        "A hardware email encryption device",
+        "A type of firewall"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Who developed PGP?",
+      "answers": [
+        "Phil Zimmermann",
+        "Bruce Schneier",
+        "Ron Rivest",
+        "Whitfield Diffie"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which of the following services is NOT provided by PGP?",
+      "answers": [
+        "Authentication",
+        "Confidentiality",
+        "Compression",
+        "Network routing"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What algorithm does PGP use for compression?",
+      "answers": ["ZIP", "RAR", "7z", "LZW"],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which of the following does PGP use for email compatibility?",
+      "answers": [
+        "Base64 encoding",
+        "Radix 64 encoding",
+        "ASCII encoding",
+        "UTF-8 encoding"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In PGP, what is created using SHA-1 for message authentication?",
+      "answers": [
+        "A digital signature",
+        "A 160-bit hash",
+        "An encryption key",
+        "A session key"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does PGP use to encrypt the actual message content?",
+      "answers": [
+        "Only public key encryption",
+        "Only symmetric key encryption",
+        "A random session key for symmetric encryption",
+        "No encryption, only hashing"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Why does PGP compress messages before encryption?",
+      "answers": [
+        "To save bandwidth only",
+        "To strengthen cryptographic security",
+        "It's required by email servers",
+        "To make the message smaller only"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is a key ring in PGP?",
+      "answers": [
+        "A physical device to store keys",
+        "A collection of public or private keys",
+        "A method to generate new keys",
+        "A way to distribute keys"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the primary reason for using session keys in PGP?",
+      "answers": [
+        "To increase the speed of encryption",
+        "To comply with email standards",
+        "To avoid having to use the recipient's public key",
+        "To enable the use of faster symmetric encryption for message content"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What does IPSec stand for?",
+      "answers": [
+        "Internet Protocol Security",
+        "Internet Protection Security",
+        "Internal Protocol Security",
+        "Intranet Protocol Security"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What layer of the TCP/IP protocol stack does IPSec operate at?",
+      "answers": [
+        "Application Layer",
+        "Transport Layer",
+        "Network Layer",
+        "Data Link Layer"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which are the two sub-protocols of IPSec?",
+      "answers": ["TCP and UDP", "HTTP and HTTPS", "AH and ESP", "TLS and SSL"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What does AH stand for in IPSec?",
+      "answers": [
+        "Allowed Header",
+        "Authentication Header",
+        "Authorized Handler",
+        "Access Header"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does ESP stand for in IPSec?",
+      "answers": [
+        "Enhanced Security Protocol",
+        "Encrypted Secure Protocol",
+        "Encapsulating Security Protocol",
+        "Extra Secure Protocol"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which mode of IPSec encrypts the entire IP packet?",
+      "answers": [
+        "Transport mode",
+        "Tunnel mode",
+        "Security mode",
+        "Encryption mode"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which IPSec mode is used to deliver services from host to host?",
+      "answers": [
+        "Tunnel mode",
+        "Transport mode",
+        "Gateway mode",
+        "End-to-end mode"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is a Security Association (SA) in IPSec?",
+      "answers": [
+        "A bidirectional logical connection between network entities",
+        "A simplex (unidirectional) logical connection between network entities",
+        "A physical connection between two routers",
+        "A security certificate"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What information is stored in the Security Association Database (SAD)?",
+      "answers": [
+        "User credentials",
+        "Encryption algorithms",
+        "State information for all SAs",
+        "Firewall rules"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What does SPI stand for in IPSec?",
+      "answers": [
+        "Security Parameter Index",
+        "Secure Protocol Identifier",
+        "System Parameter Index",
+        "Security Protocol Identifier"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What is TLS?",
+      "answers": [
+        "A cryptographic protocol designed to provide secure UDP connections",
+        "A cryptographic protocol designed to provide secure TCP connections",
+        "A hardware device for network security",
+        "A software for email encryption"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What was the predecessor to TLS?",
+      "answers": ["SSH", "IPSec", "SSL", "PGP"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What does TLS provide?",
+      "answers": [
+        "Confidentiality only",
+        "Integrity only",
+        "Authentication only",
+        "Confidentiality, integrity, and authentication"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "How many phases does TLS have?",
+      "answers": ["Two", "Three", "Four", "Five"],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the first phase of TLS?",
+      "answers": [
+        "Key derivation",
+        "Data transfer",
+        "Handshake",
+        "Connection establishment"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "During which phase of TLS does the client verify the server's identity?",
+      "answers": [
+        "Key derivation",
+        "Data transfer",
+        "Handshake",
+        "Connection closure"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is MS in the context of TLS?",
+      "answers": [
+        "Microsoft",
+        "Management System",
+        "Master Secret",
+        "Message Security"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "How many session keys are typically derived in TLS?",
+      "answers": ["Two", "Three", "Four", "Five"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the purpose of sequence numbers in TLS?",
+      "answers": [
+        "To order packets correctly",
+        "To determine packet priority",
+        "To defend against replay attacks",
+        "To identify the packet type"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What port is typically used for HTTPS (HTTP over TLS)?",
+      "answers": ["80", "443", "8080", "22"],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is an intrusion?",
+      "answers": [
+        "A hardware failure",
+        "A software bug",
+        "An attempt to compromise security mechanisms",
+        "A network outage"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which of the following is NOT a type of network intrusion?",
+      "answers": [
+        "Denial of Service attack",
+        "Man-in-the-Middle attack",
+        "Hard disk failure",
+        "Port Scanning"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the primary difference between a firewall and an IDS?",
+      "answers": [
+        "A firewall prevents attacks while an IDS detects them",
+        "A firewall operates at the network level while an IDS at the application level",
+        "A firewall is hardware while an IDS is software",
+        "A firewall is more expensive than an IDS"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What is an intrusion detection system (IDS)?",
+      "answers": [
+        "A software that blocks all network traffic",
+        "A hardware device that encrypts network traffic",
+        "A software that monitors events for signs of possible intrusions",
+        "A policy framework for network security"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the difference between an IDS and an IPS?",
+      "answers": [
+        "IDS can only detect; IPS can detect and prevent",
+        "IDS is software; IPS is hardware",
+        "IDS is for networks; IPS is for hosts",
+        "IDS is newer; IPS is older technology"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which component of an IDS gathers data for analysis?",
+      "answers": ["Director", "Agent", "Notifier", "Analyzer"],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which component of an IDS analyzes data obtained from agents?",
+      "answers": ["Director", "Agent", "Notifier", "Processor"],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which component of an IDS takes action based on analysis results?",
+      "answers": ["Director", "Agent", "Notifier", "Responder"],
+      "correct_key": [2]
+    },
+    {
+      "question": "A host-based IDS monitors:",
+      "answers": [
+        "Network traffic",
+        "Operating system logs and system-level events",
+        "Only user logins",
+        "Only file access"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "A network-based IDS monitors:",
+      "answers": [
+        "Operating system logs",
+        "User activity",
+        "Network traffic",
+        "Application logs"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which IDS deployment is most suitable for detecting attacks that have bypassed the firewall?",
+      "answers": [
+        "Just inside the firewall",
+        "Just outside the firewall",
+        "In the DMZ",
+        "On the host system"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What is a DMZ in network security?",
+      "answers": [
+        "A demilitarized zone between external and internal networks",
+        "A direct management zone for network administrators",
+        "A data management zone for storing logs",
+        "A digital monitoring zone for IDS systems"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which type of IDS compares signatures against observed events?",
+      "answers": [
+        "Anomaly-based IDS",
+        "Signature-based IDS",
+        "Specification-based IDS",
+        "Behavioral IDS"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which type of IDS compares normal activity with observed events to identify deviations?",
+      "answers": [
+        "Anomaly-based IDS",
+        "Signature-based IDS",
+        "Rule-based IDS",
+        "Pattern-matching IDS"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What is a common disadvantage of signature-based IDS?",
+      "answers": [
+        "High false positive rate",
+        "Cannot detect known attacks",
+        "Cannot detect zero-day attacks",
+        "Slower than anomaly-based IDS"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is a common advantage of anomaly-based IDS?",
+      "answers": [
+        "Low false positive rate",
+        "Can detect zero-day attacks",
+        "Requires no training",
+        "Requires no updates"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What detection method checks for excessive event occurrences over time?",
+      "answers": [
+        "Profile-based detection",
+        "Threshold detection",
+        "Pattern matching",
+        "Heuristic analysis"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is a hybrid model in IDS?",
+      "answers": [
+        "An IDS that uses both host-based and network-based methods",
+        "An IDS that combines signature and anomaly-based detection methods",
+        "An IDS that works on both Windows and Linux",
+        "An IDS that uses both software and hardware components"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In a centralized IDS architecture:",
+      "answers": [
+        "Data is analyzed at each host",
+        "All data is shipped to a central location for analysis",
+        "Each host has its own detection system",
+        "No central management is required"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In a distributed IDS architecture:",
+      "answers": [
+        "Data is collected at a central location",
+        "Analysis is performed only at a central location",
+        "Data is collected and analyzed at each host",
+        "Only one host performs the analysis"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What does FPR stand for in the context of IDS?",
+      "answers": [
+        "Full Packet Recovery",
+        "False Positive Rate",
+        "Fast Protocol Response",
+        "File Protection Rate"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which IDS type typically has a higher false positive rate?",
+      "answers": [
+        "Signature-based IDS",
+        "Anomaly-based IDS",
+        "Specification-based IDS",
+        "Rule-based IDS"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which is an advantage of host-based IDS over network-based IDS?",
+      "answers": [
+        "Can analyze encrypted traffic",
+        "Sees all network traffic",
+        "Doesn't affect host performance",
+        "OS-independent"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which is an advantage of network-based IDS over host-based IDS?",
+      "answers": [
+        "Can detect system-specific attacks",
+        "Can analyze encrypted traffic",
+        "OS-independent",
+        "Affects host performance"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What technology is often used in anomaly-based detection?",
+      "answers": [
+        "Digital signatures",
+        "Machine learning",
+        "Encryption",
+        "VPN"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does an IDS do when it detects an intrusion?",
+      "answers": [
+        "Always blocks the traffic",
+        "Always disconnects the network",
+        "Issues an alert or notification",
+        "Automatically fixes the vulnerability"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which type of attack is particularly difficult for network-based IDS to detect?",
+      "answers": [
+        "DDoS attacks",
+        "Port scanning",
+        "Encrypted attacks",
+        "SYN flooding"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which type of IDS would be best for detecting malware on a specific server?",
+      "answers": [
+        "Network-based IDS",
+        "Host-based IDS",
+        "Distributed IDS",
+        "Centralized IDS"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What technique helps IDS systems reduce false positives?",
+      "answers": [
+        "Increasing detection sensitivity",
+        "Correlation of events from multiple sources",
+        "Disabling certain detection rules",
+        "Running in passive mode only"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the relationship between IDS and SIEM (Security Information and Event Management)?",
+      "answers": [
+        "They are the same thing",
+        "SIEM typically incorporates IDS data along with other security information",
+        "IDS typically incorporates SIEM data",
+        "They operate independently and cannot be integrated"
+      ],
+      "correct_key": [1]
+    }
+  ]
+}

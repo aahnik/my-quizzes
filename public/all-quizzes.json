@@ -12,6 +12,13 @@
       "title": "History Quiz",
       "description": "Test your knowledge of historical events and figures",
       "icon": "history"
+    },
+
+    {
+      "id": "network-security",
+      "title": "Network Security",
+      "description": "Test your knowledge of network security",
+      "icon": "network"
     }
   ]
 }

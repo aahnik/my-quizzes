@@ -102,7 +102,7 @@ export default function QuizPlayer({ jsonPath, onComplete }: QuizPlayerProps) {
     !quizComplete && questions.length > 0
       ? questions[currentQuestionIndex]
       : null;
-  const isMultipleChoice = currentQuestion?.correct_key.length > 1;
+  const isMultipleChoice = currentQuestion?.correct_key?.length > 1 || false;
   const progress =
     questions.length > 0 ? (currentQuestionIndex / questions.length) * 100 : 0;
 
