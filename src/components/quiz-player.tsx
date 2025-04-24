@@ -12,7 +12,7 @@ import { Progress } from "@/components/ui/progress";
 interface QuizQuestion {
   question: string;
   answers: string[];
-  correct_key: number[];
+  correct_key: number[]; // This is required and will always be an array
 }
 
 interface Quiz {
@@ -102,7 +102,7 @@ export default function QuizPlayer({ jsonPath, onComplete }: QuizPlayerProps) {
     !quizComplete && questions.length > 0
       ? questions[currentQuestionIndex]
       : null;
-  const isMultipleChoice = currentQuestion?.correct_key?.length > 1 || false;
+  const isMultipleChoice = currentQuestion ? currentQuestion.correct_key.length > 1 : false;
   const progress =
     questions.length > 0 ? (currentQuestionIndex / questions.length) * 100 : 0;
 
