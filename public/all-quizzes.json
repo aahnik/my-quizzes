@@ -25,6 +25,14 @@
       "icon": "network",
       "questionCount": 100,
       "topics": ["Cybersecurity", "Protocols", "Best Practices"]
+    },
+    {
+      "id": "ip-sec-vpn",
+      "title": "IP Sec and VPN",
+      "description": "Test your knowledge of IP Sec",
+      "icon": "network",
+      "questionCount": 100,
+      "topics": ["Cybersecurity", "IP Sec", "VPN"]
     }
   ]
 }

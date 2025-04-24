@@ -1,0 +1,948 @@
+{
+  "id": "ipsec-vpn-quiz",
+  "title": "IPsec and Virtual Private Networks Quiz",
+  "description": "Test your knowledge on IPsec protocols and Virtual Private Networks",
+  "icon": "shield",
+  "questions": [
+    {
+      "question": "What does IPsec stand for?",
+      "answers": [
+        "Internet Protocol secure",
+        "IP security protocol",
+        "Internet Protocol security",
+        "Infrastructure Protection security"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "At which layer of the OSI model does IPsec operate?",
+      "answers": [
+        "Application layer",
+        "Transport layer",
+        "Network layer",
+        "Data link layer"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is a VPN in the context of network security?",
+      "answers": [
+        "Virtual Protocol Network",
+        "Virtual Private Network",
+        "Verified Private Network",
+        "Virtual Public Network"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What security services does IPsec provide?",
+      "answers": [
+        "Confidentiality",
+        "Source authentication",
+        "Data integrity",
+        "Replay-attack prevention"
+      ],
+      "correct_key": [0, 1, 2, 3]
+    },
+    {
+      "question": "Why is network-layer security said to provide 'blanket coverage'?",
+      "answers": [
+        "Because it operates on multiple protocols simultaneously",
+        "Because it encrypts all data sent from one entity to another",
+        "Because it can cover multiple geographical locations",
+        "Because it uses multiple layers of encryption"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is a private network as described in the text?",
+      "answers": [
+        "A network that is only accessible to private individuals",
+        "A stand-alone physical network completely separate from the public Internet",
+        "A network that uses private IP addressing",
+        "Any network that implements encryption"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the main difference between a VPN and a private network?",
+      "answers": [
+        "A VPN uses encryption while a private network does not",
+        "A VPN uses the public Internet infrastructure while a private network is physically separate",
+        "A VPN can only connect two endpoints while a private network connects multiple locations",
+        "A VPN is less secure than a private network"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In the example VPN described in the text, when do hosts use 'vanilla IPv4' (without IPsec)?",
+      "answers": [
+        "When communicating outside the institution",
+        "When communicating within the same office location",
+        "When communicating with the branch office",
+        "When traveling salespersons connect to headquarters"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What happens when an IPsec datagram is routed through the public Internet?",
+      "answers": [
+        "Routers are aware it's an IPsec packet and give it priority routing",
+        "The datagram is further encrypted by Internet routers",
+        "Internet routers process it as if it were an ordinary IPv4 datagram",
+        "The datagram is split into multiple fragments for security"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What are the two principal protocols in the IPsec protocol suite?",
+      "answers": ["TCP and UDP", "AH and ESP", "IKE and SSL", "VPN and SA"],
+      "correct_key": [1]
+    },
+    {
+      "question": "What security services does the Authentication Header (AH) protocol provide?",
+      "answers": [
+        "Source authentication and data integrity, but not confidentiality",
+        "Only confidentiality",
+        "Source authentication, data integrity, and confidentiality",
+        "Only data integrity"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What security services does the Encapsulation Security Payload (ESP) protocol provide?",
+      "answers": [
+        "Only confidentiality",
+        "Source authentication and data integrity, but not confidentiality",
+        "Source authentication, data integrity, and confidentiality",
+        "Only data integrity and confidentiality"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which IPsec protocol is more widely used for VPNs and why?",
+      "answers": [
+        "AH, because it has less overhead",
+        "ESP, because it provides confidentiality",
+        "Both are equally used",
+        "Neither, as most VPNs use SSL instead"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is a Security Association (SA) in IPsec?",
+      "answers": [
+        "A physical connection between two network entities",
+        "A set of security policies defining what traffic should be protected",
+        "A logical simplex (unidirectional) connection between two network entities",
+        "A protocol for negotiating encryption keys"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "If two hosts want to send secure IPsec datagrams to each other, how many SAs are required?",
+      "answers": ["One", "Two", "Four", "Depends on the number of sessions"],
+      "correct_key": [1]
+    },
+    {
+      "question": "In the institutional VPN example with n traveling salespersons, how many total SAs are there?",
+      "answers": ["n", "2n", "2+n", "2+2n"],
+      "correct_key": [3]
+    },
+    {
+      "question": "What identifier is used for a Security Association?",
+      "answers": [
+        "Security Association Identifier (SAID)",
+        "Security Parameter Index (SPI)",
+        "Security Association Tag (SAT)",
+        "Security Identifier Protocol (SIP)"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What information is maintained by an IPsec entity about an SA?",
+      "answers": [
+        "Only encryption and authentication keys",
+        "Only origin and destination addresses",
+        "SPI, origin and destination interfaces, encryption/authentication types and keys",
+        "Only the protocol type being used"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Where does an IPsec entity store its SA information?",
+      "answers": [
+        "Security Policy Database (SPD)",
+        "Security Association Database (SAD)",
+        "Encryption Key Database (EKD)",
+        "Internet Key Exchange (IKE)"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What are the two packet modes in IPsec?",
+      "answers": [
+        "Tunnel mode and transport mode",
+        "Fast mode and secure mode",
+        "AH mode and ESP mode",
+        "Simple mode and complex mode"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which IPsec mode is more appropriate for VPNs?",
+      "answers": [
+        "Transport mode",
+        "Tunnel mode",
+        "Both are equally appropriate",
+        "Neither is appropriate for VPNs"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the 'enchilada' in the context of IPsec?",
+      "answers": [
+        "The entire IPsec datagram including all headers",
+        "The encrypted payload and ESP trailer",
+        "The ESP header, encrypted original IP datagram, and ESP trailer",
+        "A Mexican food analogy not related to IPsec"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the purpose of padding in the ESP trailer?",
+      "answers": [
+        "To make the packet larger for better transmission",
+        "To make the message an integer multiple of the block length for block ciphers",
+        "To add random data for improved security",
+        "To accommodate variable-length header fields"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does the 'next header' field in the ESP trailer identify?",
+      "answers": [
+        "The next router in the transmission path",
+        "The next packet in a sequence",
+        "The next protocol to be used after IPsec",
+        "The type of data contained in the payload-data field"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What information is present in the ESP header?",
+      "answers": [
+        "Encryption algorithm and key",
+        "Source and destination IP addresses",
+        "SPI and sequence number",
+        "Authentication method and padding length"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the purpose of the sequence number field in the ESP header?",
+      "answers": [
+        "To identify the packet order for reassembly",
+        "To defend against replay attacks",
+        "To track the number of packets in a session",
+        "To identify which SA the packet belongs to"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the Security Policy Database (SPD) used for?",
+      "answers": [
+        "Storing encryption and authentication keys",
+        "Defining what types of datagrams should use IPsec processing and which SA to use",
+        "Managing the sequence of packets in a transmission",
+        "Storing user credentials for VPN access"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "How does the SPD relate to the SAD?",
+      "answers": [
+        "SPD indicates 'what' to do with datagrams, SAD indicates 'how' to do it",
+        "SPD is for incoming traffic, SAD is for outgoing traffic",
+        "SPD is for authentication, SAD is for encryption",
+        "They are the same database with different names"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "What protocol number is used in the outer IP header to designate an IPsec ESP datagram?",
+      "answers": ["6", "17", "50", "51"],
+      "correct_key": [2]
+    },
+    {
+      "question": "If an attacker intercepts an IPsec packet, what information can they determine about the original communication?",
+      "answers": [
+        "The specific hosts communicating",
+        "The protocol being used (TCP, UDP, etc.)",
+        "The application data being transmitted",
+        "Only that data is being transmitted between networks"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What happens if an attacker tries to tamper with an IPsec datagram?",
+      "answers": [
+        "The datagram will be accepted but the data will be corrupted",
+        "The receiving IPsec entity will detect the tampering via the MAC and reject it",
+        "The IPsec protocol will automatically correct the tampering",
+        "The datagram will be rerouted back to the sender"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What mechanism is used for automated creation of Security Associations in IPsec?",
+      "answers": [
+        "SSL Handshake",
+        "Internet Key Exchange (IKE)",
+        "Diffie-Hellman Key Exchange",
+        "Certificate Authority (CA)"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "How many phases does the IKE protocol employ?",
+      "answers": ["One", "Two", "Three", "Four"],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is created during the first exchange of the first phase of IKE?",
+      "answers": [
+        "IPsec SAs",
+        "A bi-directional IKE SA",
+        "Digital certificates",
+        "The actual VPN tunnel"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "When do the IPsec entities reveal their identities to each other in the IKE protocol?",
+      "answers": [
+        "During the first message exchange of phase 1",
+        "During the second message exchange of phase 1",
+        "During phase 2",
+        "Never, identities remain anonymous"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the primary motivation for having two phases in IKE?",
+      "answers": [
+        "To provide multiple layers of security",
+        "To reduce computational cost since phase 2 doesn't use public-key cryptography",
+        "To allow for fallback authentication if phase 1 fails",
+        "To support both AH and ESP protocols"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What symmetric cipher is mentioned as an example for use in IPsec?",
+      "answers": ["AES", "DES", "3DES with CBC", "RC4"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What integrity check mechanism is mentioned as an example for use in IPsec?",
+      "answers": ["HMAC with MD5", "SHA-256", "CRC-32", "RSA signatures"],
+      "correct_key": [0]
+    },
+    {
+      "question": "When a host in headquarters sends a datagram to a salesperson's laptop in a hotel, what happens to the datagram at the headquarters gateway router?",
+      "answers": [
+        "It is duplicated and sent along multiple paths for redundancy",
+        "It is converted from a vanilla IPv4 datagram into an IPsec datagram",
+        "It is split into multiple fragments for security",
+        "It is logged in a security database before transmission"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is contained in the payload of an IPsec datagram?",
+      "answers": [
+        "Only the original data without headers",
+        "Only the ESP header and trailer",
+        "ESP header, encrypted original IP datagram, ESP trailer, and ESP authentication field",
+        "Just the encrypted original IP datagram"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "In tunnel mode IPsec, what IP addresses are used in the new outer IP header?",
+      "answers": [
+        "The original source and destination host addresses",
+        "The addresses of the gateway routers or IPsec endpoints",
+        "The addresses of the nearest Internet backbone routers",
+        "Random addresses for security"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What happens to the original IP datagram in tunnel mode IPsec?",
+      "answers": [
+        "It is discarded after encryption",
+        "It is sent separately from the IPsec packet",
+        "It is entirely encrypted (including headers) and becomes part of the payload",
+        "Only its payload is encrypted, headers remain in cleartext"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which of the following statements about SAs is true?",
+      "answers": [
+        "An SA is bidirectional by default",
+        "Each SA requires a unique set of encryption keys",
+        "A host can only maintain one SA at a time",
+        "SAs can only be established between routers, not hosts"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What information does the receiving IPsec entity use to determine which SA an incoming datagram belongs to?",
+      "answers": [
+        "The IP addresses in the outer header",
+        "The Security Parameter Index (SPI) in the ESP header",
+        "The sequence number",
+        "The MAC value"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is 'manual keying' in the context of IPsec?",
+      "answers": [
+        "Using a physical key to access IPsec equipment",
+        "Manually entering SA information (encryption/authentication algorithms and keys) into endpoints",
+        "Typing passwords manually for each IPsec session",
+        "Using a keyboard to initiate IPsec connections"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "For what size of VPN deployment is manual keying considered impractical?",
+      "answers": [
+        "Any VPN with more than one connection",
+        "Only global-scale VPNs",
+        "VPNs with hundreds or thousands of IPsec routers and hosts",
+        "VPNs connecting more than two offices"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What key exchange method is mentioned as being used during the first message exchange of IKE phase 1?",
+      "answers": ["RSA", "Diffie-Hellman", "DSA", "ECDSA"],
+      "correct_key": [1]
+    },
+    {
+      "question": "What happens in phase 2 of the IKE protocol?",
+      "answers": [
+        "Authentication of users",
+        "Negotiation of encryption algorithms",
+        "Creation of IPsec SAs in each direction",
+        "Exchange of digital certificates"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the primary advantage of an IPsec VPN over a physically separate private network?",
+      "answers": [
+        "Higher bandwidth",
+        "Lower cost by using existing public Internet infrastructure",
+        "Better security",
+        "Simpler configuration"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does IPsec hide from potential eavesdroppers on the Internet?",
+      "answers": [
+        "Only the data payload",
+        "Only the IP addresses",
+        "Both data payload and the original IP headers",
+        "Nothing, it only prevents tampering"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "In what order are the steps performed when a router receives an IPsec datagram?",
+      "answers": [
+        "Verify MAC, check sequence number, decrypt payload, extract original datagram",
+        "Determine SA using SPI, verify MAC, check sequence number, decrypt payload, extract original datagram",
+        "Decrypt payload, verify MAC, check sequence number, extract original datagram",
+        "Extract original datagram, verify MAC, check sequence number"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What field is used in the original IPv4 header's protocol field to indicate the next protocol after IPsec processing?",
+      "answers": [
+        "ESP header's SPI field",
+        "ESP header's sequence number field",
+        "ESP trailer's next header field",
+        "New IP header's protocol field"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "How many SAs would be needed for a VPN connecting a headquarters with two branch offices, where all locations need to communicate securely with each other?",
+      "answers": ["2", "4", "6", "8"],
+      "correct_key": [2]
+    },
+    {
+      "question": "Where is the MAC calculated in an IPsec ESP packet?",
+      "answers": [
+        "Over just the ESP header",
+        "Over just the encrypted payload",
+        "Over the whole enchilada (ESP header, encrypted original IP datagram, and ESP trailer)",
+        "Over the new IP header only"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the relationship between IKE SAs and IPsec SAs?",
+      "answers": [
+        "They are the same thing",
+        "IKE SAs are temporary, replaced by IPsec SAs",
+        "IKE SAs provide a secure channel to negotiate and establish IPsec SAs",
+        "IKE SAs are used for authentication, IPsec SAs for encryption"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What component allows IPsec entities to determine which traffic should be secured?",
+      "answers": [
+        "Security Association Database (SAD)",
+        "Security Policy Database (SPD)",
+        "Internet Key Exchange (IKE)",
+        "Authentication Header (AH)"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does 'vanilla IPv4' refer to in the context of the text?",
+      "answers": [
+        "A specific version of the IPv4 protocol",
+        "IPv4 with special enhancements",
+        "Regular IPv4 without IPsec security services",
+        "IPv4 with default configurations"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What advantage does network-layer security have over transport or application layer security?",
+      "answers": [
+        "It's faster",
+        "It provides 'blanket coverage' for all protocols above it",
+        "It uses less bandwidth",
+        "It's easier to implement"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What information can an attacker determine from an encrypted IPsec datagram?",
+      "answers": [
+        "Only the general network segments (not specific hosts) communicating",
+        "The entire communication content",
+        "The specific applications being used",
+        "The exact times when each host connects"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "How does encryption work in the ESP protocol?",
+      "answers": [
+        "Only the data payload is encrypted",
+        "Only the original IP header is encrypted",
+        "The original IP datagram and ESP trailer are encrypted together",
+        "The entire IPsec packet including the new IP header is encrypted"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What happens if an IPsec datagram arrives with a duplicate sequence number?",
+      "answers": [
+        "It is processed normally",
+        "It is rejected as a potential replay attack",
+        "It overwrites the previous datagram with the same sequence number",
+        "It is queued for later processing"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In what RFC is the overall IP security architecture described?",
+      "answers": ["RFC 2401", "RFC 4301", "RFC 5996", "RFC 6071"],
+      "correct_key": [1]
+    },
+    {
+      "question": "In what RFC is the Internet Key Exchange (IKE) protocol specified?",
+      "answers": ["RFC 2409", "RFC 4301", "RFC 5996", "RFC 6071"],
+      "correct_key": [2]
+    },
+    {
+      "question": "What happens to an original IP datagram when it's processed for IPsec tunnel mode?",
+      "answers": [
+        "Its header is removed and only the payload is encrypted",
+        "The entire datagram (header and payload) is encrypted",
+        "Its header is modified to include IPsec information",
+        "It's split into multiple segments before encryption"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "How is the MAC calculated in IPsec?",
+      "answers": [
+        "Using public key cryptography",
+        "Using a keyed hash function with a secret MAC key",
+        "Using a simple checksum algorithm",
+        "Using the same key as for encryption"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Why does IPsec often use different keys for encryption and authentication?",
+      "answers": [
+        "To support different algorithms for each function",
+        "For improved security by separating the functions",
+        "To allow different parties to handle each function",
+        "Because using the same key would cause protocol conflicts"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What happens when a host outside of headquarters wants to access a web server on the public Internet?",
+      "answers": [
+        "The traffic must always go through IPsec",
+        "The traffic is blocked by IPsec",
+        "The traffic bypasses IPsec and is sent as vanilla IPv4",
+        "The traffic is first authenticated but not encrypted"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What determines whether a datagram will be processed with IPsec or sent as vanilla IPv4?",
+      "answers": [
+        "The user manually selects for each connection",
+        "The Security Policy Database (SPD)",
+        "The destination address alone",
+        "The protocol being used (TCP, UDP, etc.)"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What fields are normally present in a traditional IPv4 header but are encrypted in an IPsec tunnel mode packet?",
+      "answers": [
+        "Only the source IP address",
+        "Only the destination IP address",
+        "Both source and destination IP addresses of the original datagram",
+        "Neither source nor destination addresses are encrypted"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What is the main reason the ESP protocol is more widely used than the AH protocol?",
+      "answers": [
+        "ESP is faster to process",
+        "ESP provides confidentiality which is critical for most applications",
+        "AH is obsolete and no longer supported",
+        "ESP is simpler to implement"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What type of cryptographic operations are avoided in the second phase of IKE?",
+      "answers": [
+        "Symmetric encryption",
+        "Hash functions",
+        "Public-key cryptography",
+        "MAC calculations"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "Which parts of an IPsec datagram are authenticated by the MAC?",
+      "answers": [
+        "Only the encrypted payload",
+        "Only the ESP header and trailer",
+        "The ESP header, encrypted original IP datagram, and ESP trailer",
+        "The entire packet including the new IP header"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What allows IPsec to prevent replay attacks?",
+      "answers": [
+        "Digital signatures",
+        "Sequence numbers",
+        "Timestamps",
+        "Nonces"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What happens during the creation of an IPsec datagram?",
+      "answers": [
+        "The original datagram is discarded after its content is extracted",
+        "The original datagram headers are analyzed but not included",
+        "The entire original datagram becomes part of the new datagram's payload",
+        "The original datagram is transmitted separately as a backup"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What benefits does IPsec provide over application-layer security like SSL/TLS?",
+      "answers": [
+        "Higher speeds",
+        "Transparent security for all applications without application modification",
+        "Better encryption algorithms",
+        "More secure key exchange"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In tunnel mode IPsec, what would Internet routers see as the source and destination of a packet?",
+      "answers": [
+        "The original communicating hosts",
+        "The IPsec gateway devices (e.g., the VPN endpoints)",
+        "Random IP addresses for security",
+        "The ISP's routers"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the difference between transport mode and tunnel mode in IPsec?",
+      "answers": [
+        "Transport mode secures only the payload, tunnel mode secures the entire original datagram",
+        "Transport mode is faster, tunnel mode is more secure",
+        "Transport mode is for host-to-host, tunnel mode is only for site-to-site",
+        "Transport mode uses AH, tunnel mode uses ESP"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "If a gateway router sends both IPsec and non-IPsec traffic, how can intercepting parties distinguish between them?",
+      "answers": [
+        "They can't distinguish between them",
+        "By looking at the destination address",
+        "By the protocol number in the IP header (50 for ESP)",
+        "By the packet size"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "What makes IPsec especially suitable for creating VPNs?",
+      "answers": [
+        "It's the only protocol that can use the public Internet",
+        "It provides security at the network layer, offering 'blanket coverage' for all protocols above it",
+        "It's faster than other security protocols",
+        "It's the most recently developed security protocol"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the main purpose of the Security Parameter Index (SPI)?",
+      "answers": [
+        "To encrypt the payload",
+        "To identify which Security Association a packet belongs to",
+        "To calculate the MAC",
+        "To determine packet sequence"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "If an IPsec entity maintains state information for 10 SAs, what data structure would contain all this information?",
+      "answers": [
+        "Security Enhancement Table (SET)",
+        "Security Association Database (SAD)",
+        "Security Policy Database (SPD)",
+        "Internet Key Exchange (IKE) table"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "Why would IPsec entities need to establish new SAs periodically?",
+      "answers": [
+        "To refresh sequence numbers that might wrap around",
+        "To improve performance",
+        "To limit the amount of data encrypted with the same key",
+        "All of the above"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What authentication mechanism is typically used in IPsec?",
+      "answers": [
+        "Username and password",
+        "Digital certificates",
+        "Biometric verification",
+        "One-time passwords"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the typical bit length of the Security Parameter Index (SPI)?",
+      "answers": ["16 bits", "32 bits", "64 bits", "128 bits"],
+      "correct_key": [1]
+    },
+    {
+      "question": "Which of these is NOT mentioned as a security service provided by IPsec?",
+      "answers": [
+        "Confidentiality",
+        "Data integrity",
+        "Source authentication",
+        "Non-repudiation"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "How does IPsec handle fragmentation issues?",
+      "answers": [
+        "By setting the Don't Fragment bit",
+        "By using padding to adjust packet size",
+        "By limiting packet size",
+        "None of the above"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What would be the weakest point in a typical IPsec VPN setup?",
+      "answers": [
+        "The encryption algorithm",
+        "The key exchange process",
+        "The authentication mechanism",
+        "The human element (e.g., password selection, social engineering)"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What is used to calculate the MAC in IPsec?",
+      "answers": [
+        "The encryption key",
+        "A separate authentication key",
+        "The SPI value",
+        "The sequence number"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "In the context of IPsec, what does the term 'SA bundle' refer to?",
+      "answers": [
+        "Multiple SAs applied to the same traffic",
+        "A collection of security policies",
+        "A group of encryption algorithms",
+        "A batch of keys generated at once"
+      ],
+      "correct_key": [0]
+    },
+    {
+      "question": "Which statement is true regarding traffic through a VPN gateway?",
+      "answers": [
+        "All traffic must be IPsec secured",
+        "Traffic can be either IPsec secured or regular IPv4 based on the SPD",
+        "Only TCP traffic can be secured",
+        "Traffic is always authenticated but not always encrypted"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What entity verifies that the ESP trailer's padding is correct?",
+      "answers": [
+        "The Internet routers",
+        "The receiving IPsec entity",
+        "The sending entity before transmission",
+        "A third-party verification service"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What is the main disadvantage of using IPsec compared to transport layer security?",
+      "answers": [
+        "IPsec is less secure",
+        "IPsec requires specialized hardware",
+        "IPsec is more complex to deploy and manage",
+        "IPsec has higher latency"
+      ],
+      "correct_key": [2]
+    },
+    {
+      "question": "In a corporate environment, which type of VPN would typically be used for employees working from home?",
+      "answers": [
+        "Site-to-site VPN",
+        "Remote access VPN",
+        "Extranet VPN",
+        "Intranet VPN"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "How does IPsec typically handle Network Address Translation (NAT) issues?",
+      "answers": [
+        "It doesn't handle NAT; they are incompatible",
+        "It uses NAT traversal techniques (NAT-T)",
+        "It requires static IP addressing",
+        "It automatically detects and corrects NAT problems"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What does the 'tunnel' in tunnel mode refer to?",
+      "answers": [
+        "A physical secure connection between endpoints",
+        "The encryption of packets from one IPsec entity to another",
+        "A dedicated line leased from an ISP",
+        "A specialized routing protocol"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "If an attacker successfully compromised an SA's encryption key, what would they gain access to?",
+      "answers": [
+        "All traffic across the VPN",
+        "Only traffic for that specific SA",
+        "Administrative access to the VPN endpoints",
+        "The ability to create new SAs"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What additional security measure is typically implemented alongside IPsec in enterprise VPNs?",
+      "answers": [
+        "User authentication",
+        "Traffic filtering/firewall rules",
+        "Intrusion detection systems",
+        "All of the above"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "How are IKE messages typically exchanged?",
+      "answers": [
+        "Over a pre-established secure channel",
+        "Using UDP on port 500",
+        "Using TCP on port 443",
+        "Through a dedicated physical interface"
+      ],
+      "correct_key": [1]
+    },
+    {
+      "question": "What factor makes manual key configuration particularly problematic in large VPNs?",
+      "answers": [
+        "The complexity of the algorithms",
+        "The need to periodically refresh keys for security",
+        "The administrative overhead of managing keys for many endpoints",
+        "Both B and C"
+      ],
+      "correct_key": [3]
+    },
+    {
+      "question": "What is the relationship between an SA and cryptographic keys in IPsec?",
+      "answers": [
+        "One key is used for multiple SAs",
+        "Each SA uses different keys for each packet",
+        "Each SA has its own set of keys",
+        "Keys are independent of SAs"
+      ],
+      "correct_key": [2]
+    }
+  ]
+}
