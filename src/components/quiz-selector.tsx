@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Card,
   CardContent,
@@ -14,7 +14,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { Search, Shuffle, Plus } from "lucide-react";
+import { Modal, ModalTrigger } from "./modal";
 import {
   BookOpen,
   Brain,
@@ -55,10 +56,34 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function QuizSelector({ quizzesDirectory }: QuizSelectorProps) {
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "/" && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
+  }, []);
   const [quizzes, setQuizzes] = useState<QuizInfo[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedQuiz, setSelectedQuiz] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const shuffleQuizzes = () => {
+    setQuizzes((quizzes) => {
+      const shuffled = [...quizzes];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    });
+  };
 
   const filteredQuizzes = quizzes.filter((quiz) => {
     const searchLower = searchQuery.toLowerCase();
@@ -143,15 +168,51 @@ export default function QuizSelector({ quizzesDirectory }: QuizSelectorProps) {
 
   return (
     <div>
-      <div className="relative mb-6">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-6 w-4" />
-        <Input
-          type="text"
-          placeholder="Search quizzes by title, description or topics..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-9 h-8"
-        />
+      <div className="mb-6 space-y-4">
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-bold">All Quizzes</h1>
+          <Modal
+            title="Create New Quiz"
+            open={isModalOpen}
+            onOpenChange={setIsModalOpen}
+          >
+            <ModalTrigger asChild>
+              <Button className="h-10">
+                <Plus className="h-5 w-5" />
+                Add New Quiz
+              </Button>
+            </ModalTrigger>
+            <div className="text-center py-8">
+              <p className="text-gray-600">Coming soon!</p>
+              <p className="text-sm text-gray-500 mt-2">
+                The ability to create custom quizzes will be available in a
+                future update.
+              </p>
+            </div>
+          </Modal>
+        </div>
+        <div className="flex gap-2">
+          <div className="relative flex-1">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5" />
+            <Input
+              type="text"
+              placeholder="Search quizzes by title, description or topics... (Press '/' to focus)"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-11 h-12 text-lg w-full"
+              ref={searchInputRef}
+            />
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            className="h-12 w-12"
+            onClick={shuffleQuizzes}
+            title="Shuffle quizzes"
+          >
+            <Shuffle className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredQuizzes.map((quiz) => (
