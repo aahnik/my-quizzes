@@ -380,7 +380,7 @@ export default function QuizPlayer({ jsonPath, onComplete }: QuizPlayerProps) {
             </div>
           ) : (
             <RadioGroup
-              value={selectedAnswers[0]?.toString()}
+              value={selectedAnswers[0]?.toString() || ""}
               onValueChange={(value) =>
                 !hasSubmitted &&
                 handleSingleAnswerSelect(Number.parseInt(value))
