@@ -27,7 +27,7 @@
       "topics": ["Cybersecurity", "Protocols", "Best Practices"]
     },
     {
-      "id": "ip-sec-vpn",
+      "id": "ipsec-vpn",
       "title": "IP Sec and VPN",
       "description": "Test your knowledge of IP Sec",
       "icon": "network",
